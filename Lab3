@@ -19,3 +19,49 @@ values
 select * from professor
 
 -Q2.3
+
+insert into course(c_number,c_name,room,p_email)
+values
+	('c1','postgresql','r1','p1@jmu.edu'),
+	('c2','mongodb','r2','p2@jmu.edu'),
+	('c3','twitter','r1','p1@jmu.edu');
+	
+	
+select * from course
+
+--Q2.4
+insert into public.enroll(s_email,c_number)
+values('s1@jmu.edu','c1'),
+('s2@jmu.edu','c1'),
+('s3@jmu.edu','c1'),
+('s4@jmu.edu','c2'),
+('s2@jmu.edu','c3'),
+('s3@jmu.edu','c3');
+	
+select * from enroll
+
+--Q2.5
+/* insert professor first because the course table includes the professor table
+	
+insert into professor(p_email,p_name,p_office)
+values
+	('p3@jmu.edu','p3','o3');
+		
+insert into course (c_number,c_name,room,p_email)
+values('c4','facebook','r1',
+select * from professor	
+
+--Q2.6
+We update course first then professor, because we cannot change the professor without first changing the course they teach
+
+update course
+set p_email= 'p3@jmu.edu'
+where p_email= 'p1@jmu.edu'
+
+delete from professor
+where p_email= 'p1@jmu.edu'
+
+
+
+
+
